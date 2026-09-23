@@ -130,7 +130,10 @@ footer{border-top:1px dashed var(--border);margin-top:28px;padding-top:18px;text
 @media(max-width:600px){.medidas-painel{padding:16px}.medidas-layout{grid-template-columns:1fr}.medida-linha{grid-template-columns:1fr 105px}}
 @media(max-width:430px){.medidas-painel{max-height:92vh}.medidas-acoes{grid-template-columns:1fr}}
 .tamanho-outro{width:100%;border:1px solid var(--border);border-radius:11px;background:#f4ecdc;color:var(--ink);padding:11px 12px;font:15px Arial,sans-serif;min-height:46px}
-''</style>
+''
+.atualizar-app{width:100%;border:1px solid var(--dark);border-radius:11px;padding:13px;background:var(--card);color:var(--dark);font-size:16px;margin-top:10px}
+.atualizar-app:active{transform:scale(.99)}
+</style>
 </head>
 <body>
 <div class="wrap">
@@ -206,6 +209,7 @@ footer{border-top:1px dashed var(--border);margin-top:28px;padding-top:18px;text
   <div class="field"><label>Observações</label><textarea id="f-obs" placeholder="Outras informações..."></textarea></div>
   <button class="principal" id="btn-salvar">💾 Salvar encomenda</button>
   <button class="compartilhar" id="btn-compartilhar">📤 Compartilhar aplicativo</button>
+  <button class="atualizar-app" id="btn-atualizar">🔄 Atualizar aplicativo</button>
 </div>
 
 <div class="medidas-modal" id="medidas-modal" aria-hidden="true">
@@ -599,6 +603,7 @@ $('medidas-modal').onclick=e=>{
 };
 
 $('btn-salvar').onclick=salvar;
+$('btn-atualizar').onclick=()=>{window.location.reload();};
 
 $('btn-compartilhar').onclick=async()=>{
   const url=window.location.href;
